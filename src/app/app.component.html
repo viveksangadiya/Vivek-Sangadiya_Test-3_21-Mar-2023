@@ -1,10 +1,9 @@
 <router-outlet></router-outlet>
-
 <br>
 <br>
 <br>
 <br>
-
+<button ejs-button type="button" (click)="openAddComponentDialog()" style="margin-bottom: 8px; background-color: #34eb46;">Add Program</button>
 <ejs-grid [dataSource]="resultData" allowPaging='true' >
   <e-columns>
     <e-column field="programName" headerText="Name" textAlign="center"  ></e-column>
@@ -14,7 +13,6 @@
     <e-column field="isActive" headerText="Action">
       <ng-template #template let-data> 
         <div> 
-          <button ejs-button class="btn btn-danger" (click)="onAdd(data)">Add</button> 
           <button ejs-button class="btn btn-danger" (click)="onEdit(data)">Edit</button> 
           <button ejs-button class="btn btn-danger" (click)="onActiveChangeChange(data)">Active</button> 
           <button ejs-button class="btn btn-danger" (click)="onDeActiveChangeChange(data)">Deactivate</button> 
