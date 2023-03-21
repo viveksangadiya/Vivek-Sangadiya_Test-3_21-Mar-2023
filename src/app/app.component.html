@@ -1,0 +1,26 @@
+<router-outlet></router-outlet>
+
+<br>
+<br>
+<br>
+<br>
+
+<ejs-grid [dataSource]="resultData" allowPaging='true' >
+  <e-columns>
+    <e-column field="programName" headerText="Name" textAlign="center"  ></e-column>
+    <e-column field="programNumber" headerText="Program Number" textAlign="center" [isPrimaryKey]='true'></e-column>
+    <e-column field="programBudget" headerText="Program Budget" textAlign="center"></e-column>
+    <e-column field="programDescription" headerText="Description" textAlign="center"></e-column>
+    <e-column field="isActive" headerText="Action">
+      <ng-template #template let-data> 
+        <div> 
+          <button ejs-button class="btn btn-danger" (click)="onAdd(data)">Add</button> 
+          <button ejs-button class="btn btn-danger" (click)="onEdit(data)">Edit</button> 
+          <button ejs-button class="btn btn-danger" (click)="onActiveChangeChange(data)">Active</button> 
+          <button ejs-button class="btn btn-danger" (click)="onDeActiveChangeChange(data)">Deactivate</button> 
+        </div> 
+      </ng-template> 
+    </e-column>
+  </e-columns>
+ 
+</ejs-grid> 

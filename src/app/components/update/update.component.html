@@ -1,0 +1,32 @@
+
+ <div class="container">
+    <h1>
+        Edit Program
+    </h1>
+    <form class="container-fluid" #username="ngForm" (ngSubmit)="onSubmit()">
+
+        <fieldset>
+            <label for="pname" id="name-label">Program Name
+                <input class="field" type="text" id="pname" name="programName" placeholder="Enter Program name" required
+                    [(ngModel)]="program.programName"></label><br>
+
+            <br>
+
+            <label for="pname" id="name-label">Program Number
+                <input class="field" type="text" id="pnumber" name="programNumber" placeholder="Enter Program Number"
+                    required [(ngModel)]="program.programNumber"></label><br>
+
+            <label for="pname" id="name-label">Program Budget
+                <input class="field" type="text" id="pbudget" name="programBudget" placeholder="Enter Program Budget"
+                    required [(ngModel)]="program.programBudget"></label><br>
+
+            <label for="pname" id="name-label">Program Description
+                <input class="field" type="text" id="pdesc" name="programDescription" placeholder="Enter Program Description"
+                    required [(ngModel)]="program.programDescription"></label><br>
+
+            <button type="button" name="submission" class="btn btn-success" (click)="onUpdateData()">Update</button>
+        </fieldset>
+
+    </form>
+
+</div> 
