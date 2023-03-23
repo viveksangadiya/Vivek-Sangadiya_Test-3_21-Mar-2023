@@ -1,8 +1,9 @@
-import { Component, Inject, Input } from '@angular/core';
+import { Component, Inject, Input, ViewChild } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { ApiServiceService } from 'src/app/helper/api-service.service';
 import { Program } from 'src/app/model/Program';
 import { AddComponent } from '../add/add.component';
+import { Grid, GridComponent } from '@syncfusion/ej2-angular-grids';
 
 @Component({
   selector: 'app-update',
@@ -10,7 +11,7 @@ import { AddComponent } from '../add/add.component';
   styleUrls: ['./update.component.css']
 })
 export class UpdateComponent {
-
+ @ViewChild('grid') grid:GridComponent|undefined
   isEdit: boolean = false;
   constructor(private apiService: ApiServiceService, public dialogRef: MatDialogRef<UpdateComponent>,
     @Inject(MAT_DIALOG_DATA) public data: Program | undefined) {
@@ -42,6 +43,7 @@ export class UpdateComponent {
         console.log(this.program)
       })
       this.dialogRef.close();
+      this.grid?.refresh();
     }
   }
 }

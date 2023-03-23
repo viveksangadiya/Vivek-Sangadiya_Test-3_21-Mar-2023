@@ -4,7 +4,7 @@
 <br>
 <br>
 <button ejs-button type="button" (click)="openAddComponentDialog()" style="margin-bottom: 8px; background-color: #34eb46;">Add Program</button>
-<ejs-grid [dataSource]="resultData" allowPaging='true' >
+<ejs-grid #grid [dataSource]="resultData" allowPaging='true' [enableImmutableMode]='true' [editSettings]='editSettings'>
   <e-columns>
     <e-column field="programName" headerText="Name" textAlign="center"  ></e-column>
     <e-column field="programNumber" headerText="Program Number" textAlign="center" [isPrimaryKey]='true'></e-column>
@@ -13,9 +13,9 @@
     <e-column field="isActive" headerText="Action">
       <ng-template #template let-data> 
         <div> 
-          <button ejs-button class="btn btn-danger" (click)="onEdit(data)">Edit</button> 
-          <button ejs-button class="btn btn-danger" (click)="onActiveChangeChange(data)">Active</button> 
-          <button ejs-button class="btn btn-danger" (click)="onDeActiveChangeChange(data)">Deactivate</button> 
+          <button ejs-button class="btn btn-danger" (click)="onEdit(data)" >Edit</button> 
+          <button ejs-button class="btn btn-danger" (click)="onActiveChangeChange(data)" >Active</button> 
+          <button ejs-button class="btn btn-danger" (click)="onDeActiveChangeChange(data)" >Deactivate</button> 
         </div> 
       </ng-template> 
     </e-column>
