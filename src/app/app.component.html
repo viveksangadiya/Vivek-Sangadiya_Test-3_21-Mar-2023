@@ -14,8 +14,8 @@
       <ng-template #template let-data> 
         <div> 
           <button ejs-button class="btn btn-danger" (click)="onEdit(data)" >Edit</button> 
-          <button ejs-button class="btn btn-danger" (click)="onActiveChangeChange(data)" >Active</button> 
-          <button ejs-button class="btn btn-danger" (click)="onDeActiveChangeChange(data)" >Deactivate</button> 
+          <button ejs-button class="btn btn-danger" class="active" *ngIf="!data.isActive" (click)="onActiveChangeChange(data)" >Active</button> 
+          <button ejs-button class="btn btn-danger" class="deactive" *ngIf="data.isActive" (click)="onDeActiveChangeChange(data)" >Deactivate</button> 
         </div> 
       </ng-template> 
     </e-column>
